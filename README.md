@@ -1,24 +1,20 @@
 # maven-slf4j-lib-starter [![ci](https://github.com/daggerok/maven-slf4j-lib-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/daggerok/maven-slf4j-lib-starter/actions/workflows/ci.yml)
-Maven library project starter using java 23, maven wrapper, slf4j, assertj
+Maven library project starter using maven wrapper, slf4j, assertj and java 24 (tested on Zulu and GraalVM)
 
 ## Getting Started
+
+Create a new project
 
 ```bash
 npx --yes degit daggerok/maven-slf4j-lib-starter my-lib && cd $_
 ```
 
-## Test
-
-```bash
-./mvnw clean ; ./mvnw
-```
-
 ## Setup Development Environment
 
-Java 23
+Install Java 24
 
 ```bash
-brew reinstall zulu # zulu@23
+brew reinstall zulu # zulu@24 # graalvm # graalvm@24
 
 declare -f use # output:
 function use() {
@@ -48,4 +44,11 @@ function use() {
 	export PATH=$JAVA_HOME/bin:$PATH
 	return 0
 }
+```
+
+## Test
+
+```bash
+use zulu 24 ; java -version
+./mvnw clean ; ./mvnw
 ```
